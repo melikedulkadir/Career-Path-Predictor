@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" filepath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../miuul/machine_learning/maaş tahmin/.idea/maaş tahmin.iml" filepath="$PROJECT_DIR$/../../miuul/machine_learning/maaş tahmin/.idea/maaş tahmin.iml" />
     </modules>
   </component>
 </project>
