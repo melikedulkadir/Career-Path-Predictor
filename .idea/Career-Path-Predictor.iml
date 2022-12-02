@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.9 (base)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="103" />
+    <orderEntry type="module" module-name="Yeni klasör" />
     <orderEntry type="module" module-name="maaş tahmin" />
   </component>
 </module>

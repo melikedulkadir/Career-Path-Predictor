@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../DERS/103/.idea/103.iml" filepath="$PROJECT_DIR$/../../DERS/103/.idea/103.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" filepath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../DERS/ain212-214/Yeni klasör/.idea/Yeni klasör.iml" filepath="$PROJECT_DIR$/../../DERS/ain212-214/Yeni klasör/.idea/Yeni klasör.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../miuul/machine_learning/maaş tahmin/.idea/maaş tahmin.iml" filepath="$PROJECT_DIR$/../../miuul/machine_learning/maaş tahmin/.idea/maaş tahmin.iml" />
     </modules>
   </component>
