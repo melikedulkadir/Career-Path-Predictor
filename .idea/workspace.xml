@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d58920d5-0572-4bbd-b74f-5ac05400ef67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="d58920d5-0572-4bbd-b74f-5ac05400ef67" name="Changes" comment="Two New Models Added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,5 +40,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Two New Models Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Two New Models Added" />
   </component>
 </project>
