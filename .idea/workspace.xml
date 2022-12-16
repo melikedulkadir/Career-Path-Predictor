@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8efa5f21-3291-4eca-a953-fa8634f1cc23" name="Changes" comment="Two New Models Added">
-      <change beforePath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8efa5f21-3291-4eca-a953-fa8634f1cc23" name="Changes" comment="NN continued">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" afterDir="false" />
     </list>
@@ -175,6 +173,7 @@
     <MESSAGE value="One hot encoding applied and decision tree model created TOGETHER" />
     <MESSAGE value="Data Changed, Some Feature Engineering Studies Applied" />
     <MESSAGE value="Data Changed, Some Feature Engineering Studies Applied-Continue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data Changed, Some Feature Engineering Studies Applied-Continue" />
+    <MESSAGE value="NN continued" />
+    <option name="LAST_COMMIT_MESSAGE" value="NN continued" />
   </component>
 </project>
