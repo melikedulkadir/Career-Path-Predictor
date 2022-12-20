@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../429/AIN429_PROJECT/.idea/AIN429_PROJECT.iml" filepath="$PROJECT_DIR$/../../429/AIN429_PROJECT/.idea/AIN429_PROJECT.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" filepath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" />
       <module fileurl="file://$PROJECT_DIR$/../assig3/.idea/assig3.iml" filepath="$PROJECT_DIR$/../assig3/.idea/assig3.iml" />
     </modules>
