@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8efa5f21-3291-4eca-a953-fa8634f1cc23" name="Changes" comment="NN continued">
+    <list default="true" id="d165a72c-911c-44dc-889d-0da0b8887bbc" name="Changes" comment="some changes before progress report">
       <change beforePath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -52,7 +52,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mnurr/Desktop/cnn&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mnurr/Desktop/429&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -175,7 +175,8 @@
     <MESSAGE value="One hot encoding applied and decision tree model created TOGETHER" />
     <MESSAGE value="Data Changed, Some Feature Engineering Studies Applied" />
     <MESSAGE value="Data Changed, Some Feature Engineering Studies Applied-Continue" />
-    <MESSAGE value="NN continued" />
-    <option name="LAST_COMMIT_MESSAGE" value="NN continued" />
+    <MESSAGE value="Created a simple Neural Network model for starting TOGETHER" />
+    <MESSAGE value="some changes before progress report" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes before progress report" />
   </component>
 </project>
