@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8efa5f21-3291-4eca-a953-fa8634f1cc23" name="Changes" comment="NN continued">
-      <change beforePath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d165a72c-911c-44dc-889d-0da0b8887bbc" name="Changes" comment="Adaboost added">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2022_13_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2022_13_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_12_2022_16_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_12_2022_16_22__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_12_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_12_33__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_13_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_13_22__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" afterDir="false" />
     </list>
@@ -177,7 +179,8 @@
     <MESSAGE value="Data Changed, Some Feature Engineering Studies Applied-Continue" />
     <MESSAGE value="Created a simple Neural Network model for starting TOGETHER" />
     <MESSAGE value="some changes before progress report" />
-    <MESSAGE value="XGBoost model created TOGETHER" />
-    <option name="LAST_COMMIT_MESSAGE" value="XGBoost model created TOGETHER" />
+    <MESSAGE value="Xgoost changed" />
+    <MESSAGE value="Adaboost added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adaboost added" />
   </component>
 </project>
