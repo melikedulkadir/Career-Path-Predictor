@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d165a72c-911c-44dc-889d-0da0b8887bbc" name="Changes" comment="XGBoost model created TOGETHER" />
+    <list default="true" id="d165a72c-911c-44dc-889d-0da0b8887bbc" name="Changes" comment="some changes before progress report">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +175,6 @@
     <MESSAGE value="Data Changed, Some Feature Engineering Studies Applied-Continue" />
     <MESSAGE value="Created a simple Neural Network model for starting TOGETHER" />
     <MESSAGE value="some changes before progress report" />
-    <MESSAGE value="XGBoost model created TOGETHER" />
-    <option name="LAST_COMMIT_MESSAGE" value="XGBoost model created TOGETHER" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes before progress report" />
   </component>
 </project>
