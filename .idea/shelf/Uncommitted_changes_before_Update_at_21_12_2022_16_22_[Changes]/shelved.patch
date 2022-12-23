@@ -1,0 +1,1252 @@
+Index: Career-Path-Predictor.ipynb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Career-Path-Predictor.ipynb b/Career-Path-Predictor.ipynb
+--- a/Career-Path-Predictor.ipynb	
++++ b/Career-Path-Predictor.ipynb	
+@@ -25,7 +25,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 1,
++   "execution_count": 281,
+    "outputs": [],
+    "source": [
+     "from __future__ import absolute_import\n",
+@@ -38,7 +38,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 2,
++   "execution_count": 282,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -62,7 +62,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 3,
++   "execution_count": 283,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -70,7 +70,7 @@
+       "text/plain": "   Acedamic percentage in Operating Systems  percentage in Algorithms  \\\n0                                        69                        63   \n1                                        78                        62   \n2                                        71                        86   \n3                                        76                        87   \n4                                        92                        62   \n\n   Percentage in Programming Concepts  Percentage in Software Engineering  \\\n0                                  78                                  87   \n1                                  73                                  60   \n2                                  91                                  87   \n3                                  60                                  84   \n4                                  90                                  67   \n\n   Percentage in Computer Networks  Percentage in Electronics Subjects  \\\n0                               94                                  94   \n1                               71                                  70   \n2                               61                                  81   \n3                               89                                  73   \n4                               71                                  89   \n\n   Percentage in Computer Architecture  Percentage in Mathematics  \\\n0                                   87                         84   \n1                                   73                         84   \n2                                   72                         72   \n3                                   62                         88   \n4                                   73                         71   \n\n   Percentage in Communication skills  Hours working per day  ...  \\\n0                                  61                      9  ...   \n1                                  91                     12  ...   \n2                                  94                     11  ...   \n3                                  69                      7  ...   \n4                                  73                      4  ...   \n\n   Interested Type of Books  Salary Range Expected  In a Realtionship?  \\\n0              Prayer books                 salary                  no   \n1                 Childrens                 salary                 yes   \n2                    Travel                   Work                  no   \n3                   Romance                   Work                 yes   \n4                 Cookbooks                 salary                  no   \n\n   Gentle or Tuff behaviour? Management or Technical Salary/work  \\\n0                   stubborn              Management      salary   \n1                     gentle               Technical      salary   \n2                   stubborn              Management        work   \n3                     gentle              Management        work   \n4                   stubborn              Management        work   \n\n  hard/smart worker worked in teams ever? Introvert  \\\n0       hard worker                   yes        no   \n1       hard worker                    no       yes   \n2       hard worker                    no       yes   \n3      smart worker                   yes       yes   \n4       hard worker                   yes       yes   \n\n              Suggested Job Role  \n0         Database Administrator  \n1                Project Manager  \n2                Project Manager  \n3         Security Administrator  \n4  Business Intelligence Analyst  \n\n[5 rows x 39 columns]",
+       "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Acedamic percentage in Operating Systems</th>\n      <th>percentage in Algorithms</th>\n      <th>Percentage in Programming Concepts</th>\n      <th>Percentage in Software Engineering</th>\n      <th>Percentage in Computer Networks</th>\n      <th>Percentage in Electronics Subjects</th>\n      <th>Percentage in Computer Architecture</th>\n      <th>Percentage in Mathematics</th>\n      <th>Percentage in Communication skills</th>\n      <th>Hours working per day</th>\n      <th>...</th>\n      <th>Interested Type of Books</th>\n      <th>Salary Range Expected</th>\n      <th>In a Realtionship?</th>\n      <th>Gentle or Tuff behaviour?</th>\n      <th>Management or Technical</th>\n      <th>Salary/work</th>\n      <th>hard/smart worker</th>\n      <th>worked in teams ever?</th>\n      <th>Introvert</th>\n      <th>Suggested Job Role</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>69</td>\n      <td>63</td>\n      <td>78</td>\n      <td>87</td>\n      <td>94</td>\n      <td>94</td>\n      <td>87</td>\n      <td>84</td>\n      <td>61</td>\n      <td>9</td>\n      <td>...</td>\n      <td>Prayer books</td>\n      <td>salary</td>\n      <td>no</td>\n      <td>stubborn</td>\n      <td>Management</td>\n      <td>salary</td>\n      <td>hard worker</td>\n      <td>yes</td>\n      <td>no</td>\n      <td>Database Administrator</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>78</td>\n      <td>62</td>\n      <td>73</td>\n      <td>60</td>\n      <td>71</td>\n      <td>70</td>\n      <td>73</td>\n      <td>84</td>\n      <td>91</td>\n      <td>12</td>\n      <td>...</td>\n      <td>Childrens</td>\n      <td>salary</td>\n      <td>yes</td>\n      <td>gentle</td>\n      <td>Technical</td>\n      <td>salary</td>\n      <td>hard worker</td>\n      <td>no</td>\n      <td>yes</td>\n      <td>Project Manager</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>71</td>\n      <td>86</td>\n      <td>91</td>\n      <td>87</td>\n      <td>61</td>\n      <td>81</td>\n      <td>72</td>\n      <td>72</td>\n      <td>94</td>\n      <td>11</td>\n      <td>...</td>\n      <td>Travel</td>\n      <td>Work</td>\n      <td>no</td>\n      <td>stubborn</td>\n      <td>Management</td>\n      <td>work</td>\n      <td>hard worker</td>\n      <td>no</td>\n      <td>yes</td>\n      <td>Project Manager</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>76</td>\n      <td>87</td>\n      <td>60</td>\n      <td>84</td>\n      <td>89</td>\n      <td>73</td>\n      <td>62</td>\n      <td>88</td>\n      <td>69</td>\n      <td>7</td>\n      <td>...</td>\n      <td>Romance</td>\n      <td>Work</td>\n      <td>yes</td>\n      <td>gentle</td>\n      <td>Management</td>\n      <td>work</td>\n      <td>smart worker</td>\n      <td>yes</td>\n      <td>yes</td>\n      <td>Security Administrator</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>92</td>\n      <td>62</td>\n      <td>90</td>\n      <td>67</td>\n      <td>71</td>\n      <td>89</td>\n      <td>73</td>\n      <td>71</td>\n      <td>73</td>\n      <td>4</td>\n      <td>...</td>\n      <td>Cookbooks</td>\n      <td>salary</td>\n      <td>no</td>\n      <td>stubborn</td>\n      <td>Management</td>\n      <td>work</td>\n      <td>hard worker</td>\n      <td>yes</td>\n      <td>yes</td>\n      <td>Business Intelligence Analyst</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 39 columns</p>\n</div>"
+      },
+-     "execution_count": 3,
++     "execution_count": 283,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -89,7 +89,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 4,
++   "execution_count": 284,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -108,7 +108,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 5,
++   "execution_count": 285,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -172,7 +172,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 6,
++   "execution_count": 286,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -187,7 +187,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 7,
++   "execution_count": 287,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -199,7 +199,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 8,
++   "execution_count": 288,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -213,7 +213,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 9,
++   "execution_count": 289,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -231,7 +231,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 10,
++   "execution_count": 290,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -243,7 +243,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 11,
++   "execution_count": 291,
+    "outputs": [],
+    "source": [
+     "def high_correlated_cols(dataframe, plot=False, corr_th=0.90):\n",
+@@ -265,7 +265,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 12,
++   "execution_count": 292,
+    "outputs": [],
+    "source": [
+     "def plot_importance(model, features, save=False):\n",
+@@ -287,7 +287,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 13,
++   "execution_count": 293,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -473,7 +473,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 14,
++   "execution_count": 294,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -499,7 +499,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 15,
++   "execution_count": 295,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -520,14 +520,14 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 16,
++   "execution_count": 296,
+    "metadata": {},
+    "outputs": [
+     {
+      "data": {
+       "text/plain": "['Academic_Percentage_In_Operating_Systems',\n 'Algorithms_Percentage',\n 'Programming_Concepts_Percentage',\n 'Software_Engineering_Percentage',\n 'Computer_Networks_Percentage',\n 'Electronics_Subjects_Percentage',\n 'Computer_Architecture_Percentage',\n 'Mathematics_Percentage',\n 'Communication_Skills_Percentage',\n 'Hours_Working_Per_Day',\n 'Logical_Quotient_Rating',\n 'Hackathons',\n 'Coding_Skills_Rating',\n 'Public_Speaking_Points']"
+      },
+-     "execution_count": 16,
++     "execution_count": 296,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -538,7 +538,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 17,
++   "execution_count": 297,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -569,7 +569,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 18,
++   "execution_count": 298,
+    "outputs": [],
+    "source": [
+     "scaler = StandardScaler()\n",
+@@ -587,14 +587,14 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 19,
++   "execution_count": 299,
+    "metadata": {},
+    "outputs": [
+     {
+      "data": {
+       "text/plain": "<AxesSubplot:>"
+      },
+-     "execution_count": 19,
++     "execution_count": 299,
+      "metadata": {},
+      "output_type": "execute_result"
+     },
+@@ -615,7 +615,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 20,
++   "execution_count": 300,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -660,7 +660,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 21,
++   "execution_count": 301,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -812,14 +812,14 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 22,
++   "execution_count": 302,
+    "metadata": {},
+    "outputs": [
+     {
+      "data": {
+       "text/plain": "['Interested_Subjects',\n 'Interested_Career_Area',\n 'Type_Of_Company_Want_To_Settle_In',\n 'Worker_Type',\n 'Certifications',\n 'Workshops']"
+      },
+-     "execution_count": 22,
++     "execution_count": 302,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -835,14 +835,14 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 23,
++   "execution_count": 303,
+    "outputs": [
+     {
+      "data": {
+       "text/plain": "   Academic_Percentage_In_Operating_Systems  Algorithms_Percentage  \\\n0                                 -0.793450              -1.380807   \n1                                  0.098925              -1.479803   \n2                                 -0.595145               0.896086   \n3                                 -0.099381               0.995082   \n4                                  1.487064              -1.479803   \n\n   Programming_Concepts_Percentage  Software_Engineering_Percentage  \\\n0                         0.096941                         0.981950   \n1                        -0.396421                        -1.694608   \n2                         1.379680                         0.981950   \n3                        -1.679160                         0.684554   \n4                         1.281008                        -1.000686   \n\n   Computer_Networks_Percentage  Electronics_Subjects_Percentage  \\\n0                      1.700806                         1.670279   \n1                     -0.594640                        -0.689921   \n2                     -1.592660                         0.391837   \n3                      1.201796                        -0.394896   \n4                     -0.594640                         1.178570   \n\n   Computer_Architecture_Percentage  Mathematics_Percentage  \\\n0                          0.986229                0.699022   \n1                         -0.404204                0.699022   \n2                         -0.503520               -0.484608   \n3                         -1.496687                1.093566   \n4                         -0.404204               -0.583244   \n\n   Communication_Skills_Percentage  Hours_Working_Per_Day  ...  \\\n0                        -1.575875               0.390962  ...   \n1                         1.393469               1.547595  ...   \n2                         1.690403               1.162051  ...   \n3                        -0.784050              -0.380128  ...   \n4                        -0.388138              -1.536762  ...   \n\n   Interested_Type_Of_Books  Salary_Range_Expected  Being_In_A_Relationship  \\\n0              Prayer books                 salary                       no   \n1                 Childrens                 salary                      yes   \n2                    Travel                   Work                       no   \n3                   Romance                   Work                      yes   \n4                 Cookbooks                 salary                       no   \n\n   Gentle_Or_Tuff_Behaviour Management_Or_Technical Salary/Work   Worker_Type  \\\n0                  stubborn              Management      salary   hard worker   \n1                    gentle               Technical      salary   hard worker   \n2                  stubborn              Management        work   hard worker   \n3                    gentle              Management        work  smart worker   \n4                  stubborn              Management        work   hard worker   \n\n  Worked_In_Teams_Ever Introvert             Suggested_Job_Role  \n0                  yes        no         Database Administrator  \n1                   no       yes                Project Manager  \n2                   no       yes                Project Manager  \n3                  yes       yes         Security Administrator  \n4                  yes       yes  Business Intelligence Analyst  \n\n[5 rows x 39 columns]",
+       "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Academic_Percentage_In_Operating_Systems</th>\n      <th>Algorithms_Percentage</th>\n      <th>Programming_Concepts_Percentage</th>\n      <th>Software_Engineering_Percentage</th>\n      <th>Computer_Networks_Percentage</th>\n      <th>Electronics_Subjects_Percentage</th>\n      <th>Computer_Architecture_Percentage</th>\n      <th>Mathematics_Percentage</th>\n      <th>Communication_Skills_Percentage</th>\n      <th>Hours_Working_Per_Day</th>\n      <th>...</th>\n      <th>Interested_Type_Of_Books</th>\n      <th>Salary_Range_Expected</th>\n      <th>Being_In_A_Relationship</th>\n      <th>Gentle_Or_Tuff_Behaviour</th>\n      <th>Management_Or_Technical</th>\n      <th>Salary/Work</th>\n      <th>Worker_Type</th>\n      <th>Worked_In_Teams_Ever</th>\n      <th>Introvert</th>\n      <th>Suggested_Job_Role</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>-0.793450</td>\n      <td>-1.380807</td>\n      <td>0.096941</td>\n      <td>0.981950</td>\n      <td>1.700806</td>\n      <td>1.670279</td>\n      <td>0.986229</td>\n      <td>0.699022</td>\n      <td>-1.575875</td>\n      <td>0.390962</td>\n      <td>...</td>\n      <td>Prayer books</td>\n      <td>salary</td>\n      <td>no</td>\n      <td>stubborn</td>\n      <td>Management</td>\n      <td>salary</td>\n      <td>hard worker</td>\n      <td>yes</td>\n      <td>no</td>\n      <td>Database Administrator</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>0.098925</td>\n      <td>-1.479803</td>\n      <td>-0.396421</td>\n      <td>-1.694608</td>\n      <td>-0.594640</td>\n      <td>-0.689921</td>\n      <td>-0.404204</td>\n      <td>0.699022</td>\n      <td>1.393469</td>\n      <td>1.547595</td>\n      <td>...</td>\n      <td>Childrens</td>\n      <td>salary</td>\n      <td>yes</td>\n      <td>gentle</td>\n      <td>Technical</td>\n      <td>salary</td>\n      <td>hard worker</td>\n      <td>no</td>\n      <td>yes</td>\n      <td>Project Manager</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>-0.595145</td>\n      <td>0.896086</td>\n      <td>1.379680</td>\n      <td>0.981950</td>\n      <td>-1.592660</td>\n      <td>0.391837</td>\n      <td>-0.503520</td>\n      <td>-0.484608</td>\n      <td>1.690403</td>\n      <td>1.162051</td>\n      <td>...</td>\n      <td>Travel</td>\n      <td>Work</td>\n      <td>no</td>\n      <td>stubborn</td>\n      <td>Management</td>\n      <td>work</td>\n      <td>hard worker</td>\n      <td>no</td>\n      <td>yes</td>\n      <td>Project Manager</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>-0.099381</td>\n      <td>0.995082</td>\n      <td>-1.679160</td>\n      <td>0.684554</td>\n      <td>1.201796</td>\n      <td>-0.394896</td>\n      <td>-1.496687</td>\n      <td>1.093566</td>\n      <td>-0.784050</td>\n      <td>-0.380128</td>\n      <td>...</td>\n      <td>Romance</td>\n      <td>Work</td>\n      <td>yes</td>\n      <td>gentle</td>\n      <td>Management</td>\n      <td>work</td>\n      <td>smart worker</td>\n      <td>yes</td>\n      <td>yes</td>\n      <td>Security Administrator</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>1.487064</td>\n      <td>-1.479803</td>\n      <td>1.281008</td>\n      <td>-1.000686</td>\n      <td>-0.594640</td>\n      <td>1.178570</td>\n      <td>-0.404204</td>\n      <td>-0.583244</td>\n      <td>-0.388138</td>\n      <td>-1.536762</td>\n      <td>...</td>\n      <td>Cookbooks</td>\n      <td>salary</td>\n      <td>no</td>\n      <td>stubborn</td>\n      <td>Management</td>\n      <td>work</td>\n      <td>hard worker</td>\n      <td>yes</td>\n      <td>yes</td>\n      <td>Business Intelligence Analyst</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 39 columns</p>\n</div>"
+      },
+-     "execution_count": 23,
++     "execution_count": 303,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -856,7 +856,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 24,
++   "execution_count": 304,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -869,7 +869,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 25,
++   "execution_count": 305,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -878,7 +878,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 26,
++   "execution_count": 306,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -887,7 +887,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 27,
++   "execution_count": 307,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -896,7 +896,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 28,
++   "execution_count": 308,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -905,7 +905,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 29,
++   "execution_count": 309,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -913,7 +913,7 @@
+       "text/plain": "   Academic_Percentage_In_Operating_Systems  Algorithms_Percentage  \\\n0                                 -0.793450              -1.380807   \n1                                  0.098925              -1.479803   \n2                                 -0.595145               0.896086   \n3                                 -0.099381               0.995082   \n4                                  1.487064              -1.479803   \n\n   Programming_Concepts_Percentage  Software_Engineering_Percentage  \\\n0                         0.096941                         0.981950   \n1                        -0.396421                        -1.694608   \n2                         1.379680                         0.981950   \n3                        -1.679160                         0.684554   \n4                         1.281008                        -1.000686   \n\n   Computer_Networks_Percentage  Electronics_Subjects_Percentage  \\\n0                      1.700806                         1.670279   \n1                     -0.594640                        -0.689921   \n2                     -1.592660                         0.391837   \n3                      1.201796                        -0.394896   \n4                     -0.594640                         1.178570   \n\n   Computer_Architecture_Percentage  Mathematics_Percentage  \\\n0                          0.986229                0.699022   \n1                         -0.404204                0.699022   \n2                         -0.503520               -0.484608   \n3                         -1.496687                1.093566   \n4                         -0.404204               -0.583244   \n\n   Communication_Skills_Percentage  Hours_Working_Per_Day  ...  dum_python  \\\n0                        -1.575875               0.390962  ...           0   \n1                         1.393469               1.547595  ...           0   \n2                         1.690403               1.162051  ...           0   \n3                        -0.784050              -0.380128  ...           1   \n4                        -0.388138              -1.536762  ...           0   \n\n   dum_r programming  dum_shell programming  dum_data science  \\\n0                  0                      1                 0   \n1                  0                      0                 0   \n2                  0                      0                 0   \n3                  0                      0                 1   \n4                  0                      0                 0   \n\n   dum_database security  dum_game development  dum_hacking  \\\n0                      0                     0            0   \n1                      1                     0            0   \n2                      0                     0            0   \n3                      0                     0            0   \n4                      0                     0            0   \n\n   dum_system designing  dum_testing  dum_web technologies  \n0                     0            0                     0  \n1                     0            0                     0  \n2                     0            0                     1  \n3                     0            0                     0  \n4                     0            0                     0  \n\n[5 rows x 72 columns]",
+       "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Academic_Percentage_In_Operating_Systems</th>\n      <th>Algorithms_Percentage</th>\n      <th>Programming_Concepts_Percentage</th>\n      <th>Software_Engineering_Percentage</th>\n      <th>Computer_Networks_Percentage</th>\n      <th>Electronics_Subjects_Percentage</th>\n      <th>Computer_Architecture_Percentage</th>\n      <th>Mathematics_Percentage</th>\n      <th>Communication_Skills_Percentage</th>\n      <th>Hours_Working_Per_Day</th>\n      <th>...</th>\n      <th>dum_python</th>\n      <th>dum_r programming</th>\n      <th>dum_shell programming</th>\n      <th>dum_data science</th>\n      <th>dum_database security</th>\n      <th>dum_game development</th>\n      <th>dum_hacking</th>\n      <th>dum_system designing</th>\n      <th>dum_testing</th>\n      <th>dum_web technologies</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>-0.793450</td>\n      <td>-1.380807</td>\n      <td>0.096941</td>\n      <td>0.981950</td>\n      <td>1.700806</td>\n      <td>1.670279</td>\n      <td>0.986229</td>\n      <td>0.699022</td>\n      <td>-1.575875</td>\n      <td>0.390962</td>\n      <td>...</td>\n      <td>0</td>\n      <td>0</td>\n      <td>1</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>0.098925</td>\n      <td>-1.479803</td>\n      <td>-0.396421</td>\n      <td>-1.694608</td>\n      <td>-0.594640</td>\n      <td>-0.689921</td>\n      <td>-0.404204</td>\n      <td>0.699022</td>\n      <td>1.393469</td>\n      <td>1.547595</td>\n      <td>...</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>1</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>-0.595145</td>\n      <td>0.896086</td>\n      <td>1.379680</td>\n      <td>0.981950</td>\n      <td>-1.592660</td>\n      <td>0.391837</td>\n      <td>-0.503520</td>\n      <td>-0.484608</td>\n      <td>1.690403</td>\n      <td>1.162051</td>\n      <td>...</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>-0.099381</td>\n      <td>0.995082</td>\n      <td>-1.679160</td>\n      <td>0.684554</td>\n      <td>1.201796</td>\n      <td>-0.394896</td>\n      <td>-1.496687</td>\n      <td>1.093566</td>\n      <td>-0.784050</td>\n      <td>-0.380128</td>\n      <td>...</td>\n      <td>1</td>\n      <td>0</td>\n      <td>0</td>\n      <td>1</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>1.487064</td>\n      <td>-1.479803</td>\n      <td>1.281008</td>\n      <td>-1.000686</td>\n      <td>-0.594640</td>\n      <td>1.178570</td>\n      <td>-0.404204</td>\n      <td>-0.583244</td>\n      <td>-0.388138</td>\n      <td>-1.536762</td>\n      <td>...</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 72 columns</p>\n</div>"
+      },
+-     "execution_count": 29,
++     "execution_count": 309,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -924,14 +924,14 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 30,
++   "execution_count": 310,
+    "metadata": {},
+    "outputs": [
+     {
+      "data": {
+       "text/plain": "<AxesSubplot:>"
+      },
+-     "execution_count": 30,
++     "execution_count": 310,
+      "metadata": {},
+      "output_type": "execute_result"
+     },
+@@ -953,7 +953,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 31,
++   "execution_count": 311,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -964,7 +964,16 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 32,
++   "execution_count": 311,
++   "outputs": [],
++   "source": [],
++   "metadata": {
++    "collapsed": false
++   }
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 312,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -1001,7 +1010,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 33,
++   "execution_count": 313,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -1010,7 +1019,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 34,
++   "execution_count": 314,
+    "outputs": [],
+    "source": [
+     "df.drop(columns=drop_list, axis = 1, inplace=True)"
+@@ -1028,7 +1037,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 35,
++   "execution_count": 315,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -1037,7 +1046,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 36,
++   "execution_count": 316,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -1045,7 +1054,7 @@
+       "text/plain": "                                          Academic_Percentage_In_Operating_Systems  \\\nAcademic_Percentage_In_Operating_Systems                                  1.000000   \nAlgorithms_Percentage                                                     0.001781   \nProgramming_Concepts_Percentage                                          -0.004693   \nSoftware_Engineering_Percentage                                           0.010691   \nComputer_Networks_Percentage                                             -0.001003   \n...                                                                            ...   \ndum_data science                                                          0.003940   \ndum_database security                                                     0.006849   \ndum_game development                                                     -0.002835   \ndum_system designing                                                     -0.003674   \ndum_web technologies                                                      0.008172   \n\n                                          Algorithms_Percentage  \\\nAcademic_Percentage_In_Operating_Systems               0.001781   \nAlgorithms_Percentage                                  1.000000   \nProgramming_Concepts_Percentage                        0.000914   \nSoftware_Engineering_Percentage                        0.004178   \nComputer_Networks_Percentage                          -0.000961   \n...                                                         ...   \ndum_data science                                       0.003964   \ndum_database security                                 -0.000621   \ndum_game development                                   0.001724   \ndum_system designing                                  -0.006055   \ndum_web technologies                                  -0.001255   \n\n                                          Programming_Concepts_Percentage  \\\nAcademic_Percentage_In_Operating_Systems                        -0.004693   \nAlgorithms_Percentage                                            0.000914   \nProgramming_Concepts_Percentage                                  1.000000   \nSoftware_Engineering_Percentage                                  0.006810   \nComputer_Networks_Percentage                                     0.001120   \n...                                                                   ...   \ndum_data science                                                -0.000958   \ndum_database security                                            0.001812   \ndum_game development                                            -0.007896   \ndum_system designing                                            -0.009732   \ndum_web technologies                                             0.003464   \n\n                                          Software_Engineering_Percentage  \\\nAcademic_Percentage_In_Operating_Systems                         0.010691   \nAlgorithms_Percentage                                            0.004178   \nProgramming_Concepts_Percentage                                  0.006810   \nSoftware_Engineering_Percentage                                  1.000000   \nComputer_Networks_Percentage                                    -0.009601   \n...                                                                   ...   \ndum_data science                                                -0.003953   \ndum_database security                                           -0.013119   \ndum_game development                                            -0.003544   \ndum_system designing                                             0.007985   \ndum_web technologies                                            -0.005693   \n\n                                          Computer_Networks_Percentage  \\\nAcademic_Percentage_In_Operating_Systems                     -0.001003   \nAlgorithms_Percentage                                        -0.000961   \nProgramming_Concepts_Percentage                               0.001120   \nSoftware_Engineering_Percentage                              -0.009601   \nComputer_Networks_Percentage                                  1.000000   \n...                                                                ...   \ndum_data science                                             -0.002294   \ndum_database security                                        -0.009264   \ndum_game development                                          0.005298   \ndum_system designing                                          0.013801   \ndum_web technologies                                          0.007036   \n\n                                          Electronics_Subjects_Percentage  \\\nAcademic_Percentage_In_Operating_Systems                        -0.010402   \nAlgorithms_Percentage                                           -0.004914   \nProgramming_Concepts_Percentage                                  0.003585   \nSoftware_Engineering_Percentage                                  0.005680   \nComputer_Networks_Percentage                                    -0.002255   \n...                                                                   ...   \ndum_data science                                                 0.002643   \ndum_database security                                           -0.004657   \ndum_game development                                            -0.007735   \ndum_system designing                                             0.013328   \ndum_web technologies                                            -0.002568   \n\n                                          Computer_Architecture_Percentage  \\\nAcademic_Percentage_In_Operating_Systems                          0.011958   \nAlgorithms_Percentage                                            -0.003793   \nProgramming_Concepts_Percentage                                  -0.001093   \nSoftware_Engineering_Percentage                                   0.000722   \nComputer_Networks_Percentage                                      0.008840   \n...                                                                    ...   \ndum_data science                                                  0.000995   \ndum_database security                                            -0.009384   \ndum_game development                                              0.007971   \ndum_system designing                                             -0.001464   \ndum_web technologies                                              0.010425   \n\n                                          Mathematics_Percentage  \\\nAcademic_Percentage_In_Operating_Systems               -0.003203   \nAlgorithms_Percentage                                  -0.007968   \nProgramming_Concepts_Percentage                        -0.008326   \nSoftware_Engineering_Percentage                         0.001932   \nComputer_Networks_Percentage                            0.003276   \n...                                                          ...   \ndum_data science                                        0.007934   \ndum_database security                                   0.001676   \ndum_game development                                    0.006153   \ndum_system designing                                    0.003400   \ndum_web technologies                                   -0.009837   \n\n                                          Communication_Skills_Percentage  \\\nAcademic_Percentage_In_Operating_Systems                        -0.001770   \nAlgorithms_Percentage                                           -0.001485   \nProgramming_Concepts_Percentage                                 -0.002105   \nSoftware_Engineering_Percentage                                  0.015085   \nComputer_Networks_Percentage                                    -0.008065   \n...                                                                   ...   \ndum_data science                                                -0.015542   \ndum_database security                                            0.001324   \ndum_game development                                             0.007336   \ndum_system designing                                            -0.000841   \ndum_web technologies                                             0.004795   \n\n                                          Hours_Working_Per_Day  ...  \\\nAcademic_Percentage_In_Operating_Systems               0.009925  ...   \nAlgorithms_Percentage                                  0.011567  ...   \nProgramming_Concepts_Percentage                       -0.003532  ...   \nSoftware_Engineering_Percentage                       -0.011287  ...   \nComputer_Networks_Percentage                          -0.001204  ...   \n...                                                         ...  ...   \ndum_data science                                       0.005481  ...   \ndum_database security                                  0.000777  ...   \ndum_game development                                  -0.003866  ...   \ndum_system designing                                   0.008972  ...   \ndum_web technologies                                  -0.004635  ...   \n\n                                          dum_information security  \\\nAcademic_Percentage_In_Operating_Systems                 -0.006420   \nAlgorithms_Percentage                                    -0.002983   \nProgramming_Concepts_Percentage                           0.006082   \nSoftware_Engineering_Percentage                          -0.005249   \nComputer_Networks_Percentage                              0.008276   \n...                                                            ...   \ndum_data science                                         -0.001417   \ndum_database security                                     0.005647   \ndum_game development                                     -0.004636   \ndum_system designing                                      0.007134   \ndum_web technologies                                      0.009939   \n\n                                          dum_machine learning  dum_python  \\\nAcademic_Percentage_In_Operating_Systems             -0.000003    0.003217   \nAlgorithms_Percentage                                 0.007509    0.005236   \nProgramming_Concepts_Percentage                       0.006792   -0.008748   \nSoftware_Engineering_Percentage                       0.003070   -0.000265   \nComputer_Networks_Percentage                         -0.006701    0.008151   \n...                                                        ...         ...   \ndum_data science                                      0.012025    0.004143   \ndum_database security                                 0.000576   -0.006082   \ndum_game development                                 -0.000646    0.003772   \ndum_system designing                                  0.003490   -0.001691   \ndum_web technologies                                  0.003971   -0.003908   \n\n                                          dum_r programming  \\\nAcademic_Percentage_In_Operating_Systems           0.001074   \nAlgorithms_Percentage                             -0.004820   \nProgramming_Concepts_Percentage                   -0.007271   \nSoftware_Engineering_Percentage                   -0.002466   \nComputer_Networks_Percentage                       0.003491   \n...                                                     ...   \ndum_data science                                   0.004637   \ndum_database security                              0.001753   \ndum_game development                              -0.001365   \ndum_system designing                              -0.010540   \ndum_web technologies                              -0.006175   \n\n                                          dum_shell programming  \\\nAcademic_Percentage_In_Operating_Systems              -0.002261   \nAlgorithms_Percentage                                  0.005553   \nProgramming_Concepts_Percentage                        0.000101   \nSoftware_Engineering_Percentage                       -0.010080   \nComputer_Networks_Percentage                          -0.005981   \n...                                                         ...   \ndum_data science                                      -0.002486   \ndum_database security                                 -0.012597   \ndum_game development                                   0.008111   \ndum_system designing                                  -0.002052   \ndum_web technologies                                   0.001799   \n\n                                          dum_data science  \\\nAcademic_Percentage_In_Operating_Systems          0.003940   \nAlgorithms_Percentage                             0.003964   \nProgramming_Concepts_Percentage                  -0.000958   \nSoftware_Engineering_Percentage                  -0.003953   \nComputer_Networks_Percentage                     -0.002294   \n...                                                    ...   \ndum_data science                                  1.000000   \ndum_database security                            -0.145079   \ndum_game development                             -0.145243   \ndum_system designing                             -0.145046   \ndum_web technologies                             -0.147345   \n\n                                          dum_database security  \\\nAcademic_Percentage_In_Operating_Systems               0.006849   \nAlgorithms_Percentage                                 -0.000621   \nProgramming_Concepts_Percentage                        0.001812   \nSoftware_Engineering_Percentage                       -0.013119   \nComputer_Networks_Percentage                          -0.009264   \n...                                                         ...   \ndum_data science                                      -0.145079   \ndum_database security                                  1.000000   \ndum_game development                                  -0.144132   \ndum_system designing                                  -0.143936   \ndum_web technologies                                  -0.146217   \n\n                                          dum_game development  \\\nAcademic_Percentage_In_Operating_Systems             -0.002835   \nAlgorithms_Percentage                                 0.001724   \nProgramming_Concepts_Percentage                      -0.007896   \nSoftware_Engineering_Percentage                      -0.003544   \nComputer_Networks_Percentage                          0.005298   \n...                                                        ...   \ndum_data science                                     -0.145243   \ndum_database security                                -0.144132   \ndum_game development                                  1.000000   \ndum_system designing                                 -0.144099   \ndum_web technologies                                 -0.146383   \n\n                                          dum_system designing  \\\nAcademic_Percentage_In_Operating_Systems             -0.003674   \nAlgorithms_Percentage                                -0.006055   \nProgramming_Concepts_Percentage                      -0.009732   \nSoftware_Engineering_Percentage                       0.007985   \nComputer_Networks_Percentage                          0.013801   \n...                                                        ...   \ndum_data science                                     -0.145046   \ndum_database security                                -0.143936   \ndum_game development                                 -0.144099   \ndum_system designing                                  1.000000   \ndum_web technologies                                 -0.146184   \n\n                                          dum_web technologies  \nAcademic_Percentage_In_Operating_Systems              0.008172  \nAlgorithms_Percentage                                -0.001255  \nProgramming_Concepts_Percentage                       0.003464  \nSoftware_Engineering_Percentage                      -0.005693  \nComputer_Networks_Percentage                          0.007036  \n...                                                        ...  \ndum_data science                                     -0.147345  \ndum_database security                                -0.146217  \ndum_game development                                 -0.146383  \ndum_system designing                                 -0.146184  \ndum_web technologies                                  1.000000  \n\n[64 rows x 64 columns]",
+       "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Academic_Percentage_In_Operating_Systems</th>\n      <th>Algorithms_Percentage</th>\n      <th>Programming_Concepts_Percentage</th>\n      <th>Software_Engineering_Percentage</th>\n      <th>Computer_Networks_Percentage</th>\n      <th>Electronics_Subjects_Percentage</th>\n      <th>Computer_Architecture_Percentage</th>\n      <th>Mathematics_Percentage</th>\n      <th>Communication_Skills_Percentage</th>\n      <th>Hours_Working_Per_Day</th>\n      <th>...</th>\n      <th>dum_information security</th>\n      <th>dum_machine learning</th>\n      <th>dum_python</th>\n      <th>dum_r programming</th>\n      <th>dum_shell programming</th>\n      <th>dum_data science</th>\n      <th>dum_database security</th>\n      <th>dum_game development</th>\n      <th>dum_system designing</th>\n      <th>dum_web technologies</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Academic_Percentage_In_Operating_Systems</th>\n      <td>1.000000</td>\n      <td>0.001781</td>\n      <td>-0.004693</td>\n      <td>0.010691</td>\n      <td>-0.001003</td>\n      <td>-0.010402</td>\n      <td>0.011958</td>\n      <td>-0.003203</td>\n      <td>-0.001770</td>\n      <td>0.009925</td>\n      <td>...</td>\n      <td>-0.006420</td>\n      <td>-0.000003</td>\n      <td>0.003217</td>\n      <td>0.001074</td>\n      <td>-0.002261</td>\n      <td>0.003940</td>\n      <td>0.006849</td>\n      <td>-0.002835</td>\n      <td>-0.003674</td>\n      <td>0.008172</td>\n    </tr>\n    <tr>\n      <th>Algorithms_Percentage</th>\n      <td>0.001781</td>\n      <td>1.000000</td>\n      <td>0.000914</td>\n      <td>0.004178</td>\n      <td>-0.000961</td>\n      <td>-0.004914</td>\n      <td>-0.003793</td>\n      <td>-0.007968</td>\n      <td>-0.001485</td>\n      <td>0.011567</td>\n      <td>...</td>\n      <td>-0.002983</td>\n      <td>0.007509</td>\n      <td>0.005236</td>\n      <td>-0.004820</td>\n      <td>0.005553</td>\n      <td>0.003964</td>\n      <td>-0.000621</td>\n      <td>0.001724</td>\n      <td>-0.006055</td>\n      <td>-0.001255</td>\n    </tr>\n    <tr>\n      <th>Programming_Concepts_Percentage</th>\n      <td>-0.004693</td>\n      <td>0.000914</td>\n      <td>1.000000</td>\n      <td>0.006810</td>\n      <td>0.001120</td>\n      <td>0.003585</td>\n      <td>-0.001093</td>\n      <td>-0.008326</td>\n      <td>-0.002105</td>\n      <td>-0.003532</td>\n      <td>...</td>\n      <td>0.006082</td>\n      <td>0.006792</td>\n      <td>-0.008748</td>\n      <td>-0.007271</td>\n      <td>0.000101</td>\n      <td>-0.000958</td>\n      <td>0.001812</td>\n      <td>-0.007896</td>\n      <td>-0.009732</td>\n      <td>0.003464</td>\n    </tr>\n    <tr>\n      <th>Software_Engineering_Percentage</th>\n      <td>0.010691</td>\n      <td>0.004178</td>\n      <td>0.006810</td>\n      <td>1.000000</td>\n      <td>-0.009601</td>\n      <td>0.005680</td>\n      <td>0.000722</td>\n      <td>0.001932</td>\n      <td>0.015085</td>\n      <td>-0.011287</td>\n      <td>...</td>\n      <td>-0.005249</td>\n      <td>0.003070</td>\n      <td>-0.000265</td>\n      <td>-0.002466</td>\n      <td>-0.010080</td>\n      <td>-0.003953</td>\n      <td>-0.013119</td>\n      <td>-0.003544</td>\n      <td>0.007985</td>\n      <td>-0.005693</td>\n    </tr>\n    <tr>\n      <th>Computer_Networks_Percentage</th>\n      <td>-0.001003</td>\n      <td>-0.000961</td>\n      <td>0.001120</td>\n      <td>-0.009601</td>\n      <td>1.000000</td>\n      <td>-0.002255</td>\n      <td>0.008840</td>\n      <td>0.003276</td>\n      <td>-0.008065</td>\n      <td>-0.001204</td>\n      <td>...</td>\n      <td>0.008276</td>\n      <td>-0.006701</td>\n      <td>0.008151</td>\n      <td>0.003491</td>\n      <td>-0.005981</td>\n      <td>-0.002294</td>\n      <td>-0.009264</td>\n      <td>0.005298</td>\n      <td>0.013801</td>\n      <td>0.007036</td>\n    </tr>\n    <tr>\n      <th>...</th>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>dum_data science</th>\n      <td>0.003940</td>\n      <td>0.003964</td>\n      <td>-0.000958</td>\n      <td>-0.003953</td>\n      <td>-0.002294</td>\n      <td>0.002643</td>\n      <td>0.000995</td>\n      <td>0.007934</td>\n      <td>-0.015542</td>\n      <td>0.005481</td>\n      <td>...</td>\n      <td>-0.001417</td>\n      <td>0.012025</td>\n      <td>0.004143</td>\n      <td>0.004637</td>\n      <td>-0.002486</td>\n      <td>1.000000</td>\n      <td>-0.145079</td>\n      <td>-0.145243</td>\n      <td>-0.145046</td>\n      <td>-0.147345</td>\n    </tr>\n    <tr>\n      <th>dum_database security</th>\n      <td>0.006849</td>\n      <td>-0.000621</td>\n      <td>0.001812</td>\n      <td>-0.013119</td>\n      <td>-0.009264</td>\n      <td>-0.004657</td>\n      <td>-0.009384</td>\n      <td>0.001676</td>\n      <td>0.001324</td>\n      <td>0.000777</td>\n      <td>...</td>\n      <td>0.005647</td>\n      <td>0.000576</td>\n      <td>-0.006082</td>\n      <td>0.001753</td>\n      <td>-0.012597</td>\n      <td>-0.145079</td>\n      <td>1.000000</td>\n      <td>-0.144132</td>\n      <td>-0.143936</td>\n      <td>-0.146217</td>\n    </tr>\n    <tr>\n      <th>dum_game development</th>\n      <td>-0.002835</td>\n      <td>0.001724</td>\n      <td>-0.007896</td>\n      <td>-0.003544</td>\n      <td>0.005298</td>\n      <td>-0.007735</td>\n      <td>0.007971</td>\n      <td>0.006153</td>\n      <td>0.007336</td>\n      <td>-0.003866</td>\n      <td>...</td>\n      <td>-0.004636</td>\n      <td>-0.000646</td>\n      <td>0.003772</td>\n      <td>-0.001365</td>\n      <td>0.008111</td>\n      <td>-0.145243</td>\n      <td>-0.144132</td>\n      <td>1.000000</td>\n      <td>-0.144099</td>\n      <td>-0.146383</td>\n    </tr>\n    <tr>\n      <th>dum_system designing</th>\n      <td>-0.003674</td>\n      <td>-0.006055</td>\n      <td>-0.009732</td>\n      <td>0.007985</td>\n      <td>0.013801</td>\n      <td>0.013328</td>\n      <td>-0.001464</td>\n      <td>0.003400</td>\n      <td>-0.000841</td>\n      <td>0.008972</td>\n      <td>...</td>\n      <td>0.007134</td>\n      <td>0.003490</td>\n      <td>-0.001691</td>\n      <td>-0.010540</td>\n      <td>-0.002052</td>\n      <td>-0.145046</td>\n      <td>-0.143936</td>\n      <td>-0.144099</td>\n      <td>1.000000</td>\n      <td>-0.146184</td>\n    </tr>\n    <tr>\n      <th>dum_web technologies</th>\n      <td>0.008172</td>\n      <td>-0.001255</td>\n      <td>0.003464</td>\n      <td>-0.005693</td>\n      <td>0.007036</td>\n      <td>-0.002568</td>\n      <td>0.010425</td>\n      <td>-0.009837</td>\n      <td>0.004795</td>\n      <td>-0.004635</td>\n      <td>...</td>\n      <td>0.009939</td>\n      <td>0.003971</td>\n      <td>-0.003908</td>\n      <td>-0.006175</td>\n      <td>0.001799</td>\n      <td>-0.147345</td>\n      <td>-0.146217</td>\n      <td>-0.146383</td>\n      <td>-0.146184</td>\n      <td>1.000000</td>\n    </tr>\n  </tbody>\n</table>\n<p>64 rows × 64 columns</p>\n</div>"
+      },
+-     "execution_count": 36,
++     "execution_count": 316,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -1056,14 +1065,14 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 37,
++   "execution_count": 317,
+    "metadata": {},
+    "outputs": [
+     {
+      "data": {
+       "text/plain": "<AxesSubplot:xlabel='Suggested_Job_Role', ylabel='count'>"
+      },
+-     "execution_count": 37,
++     "execution_count": 317,
+      "metadata": {},
+      "output_type": "execute_result"
+     },
+@@ -1093,7 +1102,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 38,
++   "execution_count": 318,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -1104,7 +1113,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 39,
++   "execution_count": 319,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -1137,7 +1146,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 40,
++   "execution_count": 320,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -1164,7 +1173,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 41,
++   "execution_count": 321,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -1182,7 +1191,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 42,
++   "execution_count": 322,
+    "outputs": [],
+    "source": [
+     "col_avg = df[\"Public_Speaking_Points\"].mean()\n",
+@@ -1197,7 +1206,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 43,
++   "execution_count": 323,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -1210,7 +1219,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 44,
++   "execution_count": 324,
+    "outputs": [],
+    "source": [
+     "df['Security'] = df.apply (lambda row: categorise_security(row), axis=1)"
+@@ -1221,7 +1230,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 45,
++   "execution_count": 325,
+    "outputs": [],
+    "source": [
+     "def categorise_coding(row):\n",
+@@ -1238,7 +1247,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 46,
++   "execution_count": 326,
+    "outputs": [],
+    "source": [
+     "df['Coding_Skills'] = df.apply (lambda row: categorise_coding(row), axis=1)\n",
+@@ -1252,7 +1261,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 47,
++   "execution_count": 327,
+    "outputs": [],
+    "source": [
+     "df[\"LogicalQuotient_Memory\"] = df[\"Logical_Quotient_Rating\"]*df[\"Memory_Capability_Score\"]"
+@@ -1263,7 +1272,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 48,
++   "execution_count": 328,
+    "outputs": [
+     {
+      "data": {
+@@ -1292,7 +1301,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 49,
++   "execution_count": 329,
+    "outputs": [],
+    "source": [
+     "X = df.drop(columns=[\"Suggested_Job_Role\"],axis=1)\n",
+@@ -1305,7 +1314,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 50,
++   "execution_count": 330,
+    "outputs": [
+     {
+      "name": "stdout",
+@@ -1340,7 +1349,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 51,
++   "execution_count": 331,
+    "outputs": [
+     {
+      "name": "stdout",
+@@ -1375,7 +1384,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 52,
++   "execution_count": 332,
+    "outputs": [
+     {
+      "name": "stdout",
+@@ -1409,7 +1418,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 53,
++   "execution_count": 333,
+    "outputs": [
+     {
+      "name": "stdout",
+@@ -1452,7 +1461,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 54,
++   "execution_count": 334,
+    "outputs": [],
+    "source": [
+     "import numpy as np\n",
+@@ -1477,7 +1486,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 55,
++   "execution_count": 335,
+    "outputs": [],
+    "source": [
+     "df = shuffle(df)\n",
+@@ -1491,7 +1500,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 56,
++   "execution_count": 336,
+    "outputs": [],
+    "source": [
+     "l_encode = LabelEncoder()\n",
+@@ -1506,13 +1515,13 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 57,
++   "execution_count": 337,
+    "outputs": [
+     {
+      "data": {
+       "text/plain": "((14000, 69), (14000, 6), (6000, 69), (6000, 6))"
+      },
+-     "execution_count": 57,
++     "execution_count": 337,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -1527,116 +1536,71 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 63,
++   "execution_count": 351,
++   "outputs": [],
++   "source": [
++    "train_x = np.reshape(train_x, (train_x.shape[0], train_x.shape[1], 1))"
++   ],
++   "metadata": {
++    "collapsed": false
++   }
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 368,
+    "outputs": [
+     {
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+-      "Epoch 1/40\n",
+-      "875/875 [==============================] - 4s 3ms/step - loss: 0.1389 - accuracy: 0.1975 - val_loss: 0.1383 - val_accuracy: 0.2002\n",
+-      "Epoch 2/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1375 - accuracy: 0.2019 - val_loss: 0.1379 - val_accuracy: 0.1988\n",
+-      "Epoch 3/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1372 - accuracy: 0.2150 - val_loss: 0.1378 - val_accuracy: 0.1972\n",
+-      "Epoch 4/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1371 - accuracy: 0.2163 - val_loss: 0.1379 - val_accuracy: 0.1972\n",
+-      "Epoch 5/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1369 - accuracy: 0.2214 - val_loss: 0.1378 - val_accuracy: 0.1998\n",
+-      "Epoch 6/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1368 - accuracy: 0.2227 - val_loss: 0.1378 - val_accuracy: 0.2005\n",
+-      "Epoch 7/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1367 - accuracy: 0.2265 - val_loss: 0.1380 - val_accuracy: 0.1962\n",
+-      "Epoch 8/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1366 - accuracy: 0.2305 - val_loss: 0.1380 - val_accuracy: 0.1927\n",
+-      "Epoch 9/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1365 - accuracy: 0.2300 - val_loss: 0.1381 - val_accuracy: 0.1953\n",
+-      "Epoch 10/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1364 - accuracy: 0.2346 - val_loss: 0.1381 - val_accuracy: 0.1972\n",
+-      "Epoch 11/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1363 - accuracy: 0.2403 - val_loss: 0.1381 - val_accuracy: 0.1952\n",
+-      "Epoch 12/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1362 - accuracy: 0.2383 - val_loss: 0.1381 - val_accuracy: 0.1963\n",
+-      "Epoch 13/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1361 - accuracy: 0.2450 - val_loss: 0.1381 - val_accuracy: 0.1973\n",
+-      "Epoch 14/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1360 - accuracy: 0.2449 - val_loss: 0.1382 - val_accuracy: 0.1962\n",
+-      "Epoch 15/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1359 - accuracy: 0.2449 - val_loss: 0.1382 - val_accuracy: 0.1925\n",
+-      "Epoch 16/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1358 - accuracy: 0.2526 - val_loss: 0.1382 - val_accuracy: 0.1918\n",
+-      "Epoch 17/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1357 - accuracy: 0.2539 - val_loss: 0.1384 - val_accuracy: 0.1897\n",
+-      "Epoch 18/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1356 - accuracy: 0.2566 - val_loss: 0.1385 - val_accuracy: 0.1910\n",
+-      "Epoch 19/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1354 - accuracy: 0.2576 - val_loss: 0.1386 - val_accuracy: 0.1923\n",
+-      "Epoch 20/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1353 - accuracy: 0.2630 - val_loss: 0.1386 - val_accuracy: 0.1920\n",
+-      "Epoch 21/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1352 - accuracy: 0.2598 - val_loss: 0.1386 - val_accuracy: 0.1938\n",
+-      "Epoch 22/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1350 - accuracy: 0.2641 - val_loss: 0.1388 - val_accuracy: 0.1972\n",
+-      "Epoch 23/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1349 - accuracy: 0.2711 - val_loss: 0.1387 - val_accuracy: 0.1895\n",
+-      "Epoch 24/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1347 - accuracy: 0.2745 - val_loss: 0.1387 - val_accuracy: 0.1932\n",
+-      "Epoch 25/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1346 - accuracy: 0.2754 - val_loss: 0.1389 - val_accuracy: 0.1963\n",
+-      "Epoch 26/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1345 - accuracy: 0.2786 - val_loss: 0.1390 - val_accuracy: 0.1918\n",
+-      "Epoch 27/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1343 - accuracy: 0.2846 - val_loss: 0.1391 - val_accuracy: 0.1935\n",
+-      "Epoch 28/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1342 - accuracy: 0.2849 - val_loss: 0.1390 - val_accuracy: 0.1905\n",
+-      "Epoch 29/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1340 - accuracy: 0.2859 - val_loss: 0.1392 - val_accuracy: 0.1967\n",
+-      "Epoch 30/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1338 - accuracy: 0.2890 - val_loss: 0.1393 - val_accuracy: 0.1942\n",
+-      "Epoch 31/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1337 - accuracy: 0.2905 - val_loss: 0.1394 - val_accuracy: 0.1913\n",
+-      "Epoch 32/40\n",
+-      "875/875 [==============================] - 3s 3ms/step - loss: 0.1335 - accuracy: 0.2919 - val_loss: 0.1395 - val_accuracy: 0.1962\n",
+-      "Epoch 33/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1333 - accuracy: 0.2986 - val_loss: 0.1397 - val_accuracy: 0.1988\n",
+-      "Epoch 34/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1331 - accuracy: 0.3029 - val_loss: 0.1396 - val_accuracy: 0.1958\n",
+-      "Epoch 35/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1329 - accuracy: 0.3041 - val_loss: 0.1398 - val_accuracy: 0.1900\n",
+-      "Epoch 36/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1327 - accuracy: 0.3088 - val_loss: 0.1400 - val_accuracy: 0.1935\n",
+-      "Epoch 37/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1325 - accuracy: 0.3087 - val_loss: 0.1402 - val_accuracy: 0.1872\n",
+-      "Epoch 38/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1322 - accuracy: 0.3144 - val_loss: 0.1401 - val_accuracy: 0.1970\n",
+-      "Epoch 39/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1321 - accuracy: 0.3138 - val_loss: 0.1403 - val_accuracy: 0.1938\n",
+-      "Epoch 40/40\n",
+-      "875/875 [==============================] - 2s 3ms/step - loss: 0.1318 - accuracy: 0.3189 - val_loss: 0.1406 - val_accuracy: 0.1903\n",
+-      "188/188 [==============================] - 0s 2ms/step - loss: 0.1406 - accuracy: 0.1903\n",
+-      "loss 0.14059434831142426\n",
+-      "accuracy 0.19033333659172058\n"
++      "Epoch 1/4\n",
++      "875/875 [==============================] - 66s 70ms/step - loss: 2.4025 - accuracy: 0.1634\n",
++      "Epoch 2/4\n",
++      "875/875 [==============================] - 61s 70ms/step - loss: 1.7799 - accuracy: 0.1908\n",
++      "Epoch 3/4\n",
++      "875/875 [==============================] - 62s 71ms/step - loss: 1.7670 - accuracy: 0.2001\n",
++      "Epoch 4/4\n",
++      "875/875 [==============================] - 61s 70ms/step - loss: 1.7639 - accuracy: 0.1913\n",
++      "188/188 [==============================] - 1s 4ms/step - loss: 1.7843 - accuracy: 0.2002\n",
++      "loss 1.7843458652496338\n",
++      "accuracy 0.20016667246818542\n"
+      ]
+     }
+    ],
+    "source": [
++    "from keras.applications.densenet import layers\n",
+     "from keras.optimizers import Adam\n",
+     "\n",
+-    "in_dim = len(df.columns)-1\n",
++    "regressor = Sequential()\n",
+     "\n",
+-    "model = Sequential()\n",
+-    "model.add(Dense(60, input_dim = in_dim, activation = 'tanh'))\n",
+-    "model.add(Dense(60, activation = 'tanh'))\n",
+-    "model.add(Dense(60, activation = 'tanh'))\n",
+-    "model.add(Dense(60, activation = 'tanh'))\n",
+-    "model.add(Dense(6, activation = 'softmax'))\n",
+-    "adam = Adam(lr=0.0001, clipvalue = 0.5,epsilon=1e-8)\n",
+-    "model.compile(loss = 'MSE', optimizer = adam, metrics = ['accuracy'])\n",
+-    "history = model.fit(train_x, train_y, epochs = 40, batch_size = 16, validation_data=(test_x, test_y))\n",
++    "#Adding the first RNN layer and some Dropout regularization\n",
++    "regressor.add(layers.SimpleRNN(units = 69, activation='tanh', return_sequences=True, input_shape= (X_train.shape[1],1)))\n",
++    "regressor.add(layers.Dropout(0.2))\n",
++    "\n",
++    "#Adding the second RNN layer and some Dropout regularization\n",
++    "regressor.add(layers.SimpleRNN(units = 50, activation='tanh', return_sequences=True))\n",
++    "regressor.add(layers.Dropout(0.2))\n",
++    "\n",
++    "#Adding the third RNN layer and some Dropout regularization\n",
++    "regressor.add(layers.SimpleRNN(units = 50, activation='tanh', return_sequences=True))\n",
++    "regressor.add(layers.Dropout(0.2))\n",
++    "\n",
++    "#Adding the fourth RNN layer and some Dropout regularization\n",
++    "regressor.add(layers.SimpleRNN(units = 50, activation='softmax'))\n",
++    "regressor.add(layers.Dropout(0.2))\n",
++    "\n",
++    "#Adding the output layer\n",
++    "regressor.add(Dense(units = 6))\n",
++    "\n",
++    "#Compile the RNN\n",
++    "regressor.compile(optimizer='adam', loss='categorical_crossentropy', metrics=[\"accuracy\"])\n",
++    "\n",
++    "#Fitting the RNN to the Training set\n",
++    "history = regressor.fit(train_x, train_y, epochs=4, batch_size=16)\n",
+     "scores = model.evaluate(test_x, test_y)\n",
+     "\n",
+     "for i, m in enumerate(model.metrics_names):\n",
+-    "    print(m, scores[i])"
++    "    print(m, scores[i])\n"
+    ],
+    "metadata": {
+     "collapsed": false
+@@ -1644,20 +1608,41 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 64,
++   "execution_count": 370,
+    "outputs": [
+     {
+      "data": {
+-      "text/plain": "<matplotlib.legend.Legend at 0x1339eae06d0>"
++      "text/plain": "       loss  accuracy\n0  2.402452  0.163357\n1  1.779893  0.190786\n2  1.767010  0.200143\n3  1.763915  0.191286",
++      "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>loss</th>\n      <th>accuracy</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>2.402452</td>\n      <td>0.163357</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>1.779893</td>\n      <td>0.190786</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>1.767010</td>\n      <td>0.200143</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>1.763915</td>\n      <td>0.191286</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+-     "execution_count": 64,
++     "execution_count": 370,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "source": [
++    "logs"
++   ],
++   "metadata": {
++    "collapsed": false
++   }
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 371,
++   "outputs": [
++    {
++     "data": {
++      "text/plain": "<matplotlib.legend.Legend at 0x1c64cdb6430>"
++     },
++     "execution_count": 371,
+      "metadata": {},
+      "output_type": "execute_result"
+     },
+     {
+      "data": {
+       "text/plain": "<Figure size 1008x288 with 1 Axes>",
+-      "image/png": "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\n"
++      "image/png": "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54qISPO54E0NEyZMYOzYsfj4+LBmzRo2b97MNddcozASEZEmccFAOnToED179uSmm26iS5cuwA/vQxIREWkKFwyk7Oxshg8fzubNm7nzzjuZPHky586dc2dtIiLiQS4YSN7e3kRHR7N27Vo2btxIUFAQ586dY/DgwaSlpbmzRhER8QB1/mIsQNeuXZk1axa7d+/m0UcfJT09vanrEhERD3NJgXTeVVddxahRo3j//febqh4REfFQlxVIIiIiTUWBJCIipqBAEhERU1AgiYiIKSiQRETEFBRIIiJiCgokERExBQWSiIiYggJJRERMwe2BlJeXx5gxYxgyZAjx8fGUlpbWGONwOEhISCAqKorhw4fz9ddfA1BaWsqUKVOIiYkhJiaGDz/80N3li4hIE3F7ICUmJjJ69GiysrIIDQ1l2bJlNcasXbuWq666iq1bt/L8888zY8YMAFasWEGnTp3IzMxk9erVJCcnU1hY6O4WRESkCbg1kCoqKti3bx+RkZEAxMXFkZWVVWNcdnY2sbGxANx6660UFRWRl5dHv379XK9PDwwMJCAgQIEkInKFuOgrzBtbcXEx/v7+eHv/cFibzUZ+fn6NcQUFBdhsNteyzWbjxIkThIeHu9Zt2bIFh8NB165dm75wERFpck0WSFu3biU5Obnaui5dutR462xtb6E1DKPaesMwsFr/fTK3detWFixYwMqVK13hdqkCA/0va7zZ2Gx6hbynz4Gn9w+agyu1/yYLpKioKKKioqqtq6io4LbbbqOqqgovLy/sdjtBQUE19g0ODqagoIDOnTsDUFhY6Bq3du1aVq1axapVq+jevftl13XyZAlOp1GPjpqfzdYau/1Mc5fRrDx9Djy9f9ActPT+rVbLBU8M3Podko+PD2FhYWzZsgWATZs2ERERUWPcwIEDycjIACAnJwc/Pz86derEjh07WL16NWlpafUKIxERMS+LYRhuPV3Izc1l+vTpnDx5ko4dO/Lyyy/Tpk0b0tLSKCgoYMqUKZw7d445c+Zw8OBBfH19SUpKomfPnsTGxlJUVERgYKDr85KSkujVq9clH19nSC2bp8+Bp/cPmoOW3v/FzpDcHkjNTYHUsnn6HHh6/6A5aOn9m+aSnYiIyIUokERExBQUSCIiYgoKJBERMQUFkoiImIICSURETEGBJCIipqBAEhERU1AgiYiIKSiQ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\n"
+      },
+      "metadata": {},
+      "output_type": "display_data"
+@@ -1668,7 +1653,7 @@
+     "plt.figure(figsize=(14, 4))\n",
+     "plt.subplot(1, 2, 1)\n",
+     "plt.plot(logs.loc[5:,\"accuracy\"], lw=2, label='training accuracy')\n",
+-    "plt.plot(logs.loc[5:,\"val_accuracy\"], lw=2, label='test accuracy')\n",
++    "plt.plot(logs.loc[5:,\"loss\"], lw=2, label='loss')\n",
+     "plt.xlabel(\"Epoch\")\n",
+     "plt.ylabel(\"Accuracy\")\n",
+     "plt.legend()"
+@@ -1679,7 +1664,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 65,
++   "execution_count": 250,
+    "outputs": [],
+    "source": [
+     "import keras\n",
+@@ -1703,7 +1688,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 66,
++   "execution_count": 251,
+    "outputs": [],
+    "source": [
+     "learning_rate = 0.001\n",
+@@ -1719,7 +1704,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 67,
++   "execution_count": 252,
+    "outputs": [],
+    "source": [
+     "history = model.fit(train_x, train_y,\n",
+@@ -1734,33 +1719,33 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 68,
++   "execution_count": 253,
+    "outputs": [
+     {
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+-      "1/1 [==============================] - 0s 133ms/step\n",
+-      "[[0.3416528  0.11470652 0.121534   0.16269128 0.1442751  0.09425449]\n",
+-      " [0.0691846  0.07347159 0.18299542 0.24553406 0.2562259  0.21302068]\n",
+-      " [0.26731077 0.09008495 0.12785648 0.23350722 0.1536359  0.09087527]\n",
+-      " [0.17543234 0.1049961  0.1954891  0.19539332 0.1613027  0.17777038]\n",
+-      " [0.16310886 0.08275828 0.16977742 0.20684461 0.22601484 0.1527173 ]\n",
+-      " [0.18727863 0.05521164 0.1819926  0.21164683 0.2590141  0.11658965]\n",
+-      " [0.21993724 0.08930722 0.17045736 0.19285783 0.19931982 0.13799997]\n",
+-      " [0.2306208  0.08728753 0.261981   0.08922119 0.24816348 0.10192656]\n",
+-      " [0.20244204 0.09094547 0.19839719 0.18244785 0.18134211 0.14804488]\n",
+-      " [0.25657222 0.04915261 0.18410586 0.17507406 0.2639306  0.08894654]]\n",
+-      "Predicted: Business Intelligence Analyst, True: Project Manager\n",
+-      "Predicted: Software Developer, True: Business Intelligence Analyst\n",
+-      "Predicted: Business Intelligence Analyst, True: Database Administrator\n",
++      "1/1 [==============================] - 0s 157ms/step\n",
++      "[[0.2107228  0.03809167 0.27661037 0.2159202  0.16410324 0.14022288]\n",
++      " [0.1586408  0.08692402 0.20809609 0.18998054 0.20382957 0.16325808]\n",
++      " [0.16748719 0.08897357 0.19198903 0.1960846  0.1917416  0.15437107]\n",
++      " [0.15706038 0.0267482  0.2665269  0.17259717 0.20595592 0.14922509]\n",
++      " [0.19481453 0.07853031 0.24005476 0.17627768 0.23114814 0.08186667]\n",
++      " [0.26415825 0.12349776 0.14492112 0.189387   0.23422746 0.06068772]\n",
++      " [0.18131971 0.09553879 0.18237664 0.1807437  0.21436726 0.12408141]\n",
++      " [0.18014288 0.0923279  0.22073574 0.21170728 0.16680773 0.12036832]\n",
++      " [0.17080401 0.09348408 0.21640545 0.1799378  0.19359541 0.17279647]\n",
++      " [0.11933912 0.10616771 0.18541786 0.14120927 0.32794923 0.07994457]]\n",
++      "Predicted: Project Manager, True: Software Developer\n",
+       "Predicted: Project Manager, True: Business Intelligence Analyst\n",
+-      "Predicted: Software Developer, True: Software Developer\n",
+-      "Predicted: Software Developer, True: Project Manager\n",
++      "Predicted: Security Administrator, True: Project Manager\n",
++      "Predicted: Project Manager, True: Technical Support\n",
++      "Predicted: Project Manager, True: Database Administrator\n",
+       "Predicted: Business Intelligence Analyst, True: Software Developer\n",
++      "Predicted: Software Developer, True: Business Intelligence Analyst\n",
+       "Predicted: Project Manager, True: Project Manager\n",
+-      "Predicted: Business Intelligence Analyst, True: Software Developer\n",
+-      "Predicted: Software Developer, True: Security Administrator\n"
++      "Predicted: Project Manager, True: Technical Support\n",
++      "Predicted: Software Developer, True: Project Manager\n"
+      ]
+     }
+    ],
+@@ -1783,7 +1768,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 69,
++   "execution_count": 254,
+    "outputs": [],
+    "source": [
+     "sns.set()\n",
+@@ -1820,7 +1805,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 70,
++   "execution_count": 255,
+    "outputs": [],
+    "source": [
+     "import tensorflow as tf"
+@@ -1830,80 +1815,9 @@
+    }
+   },
+   {
+-   "cell_type": "code",
+-   "execution_count": 71,
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Epoch 1/20\n",
+-      "438/438 [==============================] - 2s 3ms/step - loss: 0.1508 - rmse: 0.3883 - val_loss: 0.1417 - val_rmse: 0.3764\n",
+-      "Epoch 2/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1413 - rmse: 0.3759 - val_loss: 0.1403 - val_rmse: 0.3745\n",
+-      "Epoch 3/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1396 - rmse: 0.3737 - val_loss: 0.1392 - val_rmse: 0.3731\n",
+-      "Epoch 4/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1387 - rmse: 0.3725 - val_loss: 0.1387 - val_rmse: 0.3724\n",
+-      "Epoch 5/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1384 - rmse: 0.3720 - val_loss: 0.1388 - val_rmse: 0.3725\n",
+-      "Epoch 6/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1380 - rmse: 0.3715 - val_loss: 0.1380 - val_rmse: 0.3715\n",
+-      "Epoch 7/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1378 - rmse: 0.3713 - val_loss: 0.1384 - val_rmse: 0.3720\n",
+-      "Epoch 8/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1377 - rmse: 0.3711 - val_loss: 0.1379 - val_rmse: 0.3713\n",
+-      "Epoch 9/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1376 - rmse: 0.3710 - val_loss: 0.1381 - val_rmse: 0.3716\n",
+-      "Epoch 10/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1375 - rmse: 0.3708 - val_loss: 0.1385 - val_rmse: 0.3721\n",
+-      "Epoch 11/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1374 - rmse: 0.3707 - val_loss: 0.1378 - val_rmse: 0.3712\n",
+-      "Epoch 12/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1373 - rmse: 0.3706 - val_loss: 0.1379 - val_rmse: 0.3713\n",
+-      "Epoch 13/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1373 - rmse: 0.3706 - val_loss: 0.1380 - val_rmse: 0.3715\n",
+-      "Epoch 14/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1374 - rmse: 0.3706 - val_loss: 0.1376 - val_rmse: 0.3710\n",
+-      "Epoch 15/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1373 - rmse: 0.3705 - val_loss: 0.1381 - val_rmse: 0.3716\n",
+-      "Epoch 16/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1373 - rmse: 0.3705 - val_loss: 0.1375 - val_rmse: 0.3709\n",
+-      "Epoch 17/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1373 - rmse: 0.3705 - val_loss: 0.1377 - val_rmse: 0.3711\n",
+-      "Epoch 18/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1372 - rmse: 0.3705 - val_loss: 0.1376 - val_rmse: 0.3709\n",
+-      "Epoch 19/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1372 - rmse: 0.3704 - val_loss: 0.1376 - val_rmse: 0.3709\n",
+-      "Epoch 20/20\n",
+-      "438/438 [==============================] - 1s 3ms/step - loss: 0.1372 - rmse: 0.3704 - val_loss: 0.1377 - val_rmse: 0.3711\n"
+-     ]
+-    },
+-    {
+-     "data": {
+-      "text/plain": "<keras.callbacks.History at 0x133b5669550>"
+-     },
+-     "execution_count": 71,
+-     "metadata": {},
+-     "output_type": "execute_result"
+-    }
+-   ],
++   "cell_type": "markdown",
+    "source": [
+-    "model = tf.keras.Sequential()\n",
+-    "\n",
+-    "model.add(tf.keras.layers.Dense(20))\n",
+-    "model.add(tf.keras.layers.Dense(60))\n",
+-    "model.add(tf.keras.layers.Dense(60))\n",
+-    "model.add(tf.keras.layers.Dense(60))\n",
+-    "model.add(tf.keras.layers.Dense(6))\n",
+-    "\n",
+-    "model.compile(\n",
+-    "    loss = 'mse',\n",
+-    "    optimizer = tf.keras.optimizers.Adam(),\n",
+-    "    metrics = [tf.keras.metrics.RootMeanSquaredError(name='rmse')]\n",
+-    ")\n",
+-    "\n",
+-    "model.fit(train_x, train_y, validation_data=(test_x, test_y), epochs=20)"
++    "Transfer Learning"
+    ],
+    "metadata": {
+     "collapsed": false
+@@ -1911,27 +1825,13 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 72,
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "188/188 [==============================] - 0s 2ms/step - loss: 0.1377 - rmse: 0.3711\n"
+-     ]
+-    },
+-    {
+-     "data": {
+-      "text/plain": "0.37113267183303833"
+-     },
+-     "execution_count": 72,
+-     "metadata": {},
+-     "output_type": "execute_result"
+-    }
+-   ],
++   "execution_count": 256,
++   "outputs": [],
+    "source": [
+-    "RMSE_ann = model.evaluate(test_x, test_y)[1]\n",
+-    "RMSE_ann"
++    "from keras.layers import Input, Conv1D, MaxPool1D, Activation, Add, Dense, Flatten\n",
++    "from keras.models import Model\n",
++    "from keras.optimizers import Adam\n",
++    "from keras.callbacks import LearningRateScheduler"
+    ],
+    "metadata": {
+     "collapsed": false
+@@ -1939,16 +1839,49 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 73,
++   "execution_count": null,
+    "outputs": [],
+    "source": [
++    "input_shape = (69,1)\n",
+     "\n",
+-    "models = {\n",
+-    "    'Ridge' : Ridge(),\n",
+-    "    'Xgboost' : XGBRegressor(),\n",
+-    "    'Lasso' : Lasso(),\n",
+-    "    'Knn' : KNeighborsRegressor(n_neighbors = 4),\n",
+-    "}"
++    "def make_model(final_layer_size=4):\n",
++    "    I = Input(input_shape)\n",
++    "    C = Conv1D(filters=32, kernel_size=5)(I)\n",
++    "\n",
++    "    C11 = Conv1D(filters=32, kernel_size=5, activation='relu', padding='same')(C)\n",
++    "    C12 = Conv1D(filters=32, kernel_size=5, padding='same')(C11)\n",
++    "    A11 = Add()([C, C12])\n",
++    "    R11 = Activation(activation='relu')(A11)\n",
++    "    M11 = MaxPool1D(pool_size=3, strides=2)(R11)\n",
++    "\n",
++    "    C21 = Conv1D(filters=32, kernel_size=5, activation='relu', padding='same')(M11)\n",
++    "    C22 = Conv1D(filters=32, kernel_size=5, padding='same')(C21)\n",
++    "    A21 = Add()([M11, C22])\n",
++    "    R21 = Activation(activation='relu')(A21)\n",
++    "    M21 = MaxPool1D(pool_size=3, strides=2)(R21)\n",
++    "\n",
++    "    C31 = Conv1D(filters=32, kernel_size=5, activation='relu', padding='same')(M21)\n",
++    "    C32 = Conv1D(filters=32, kernel_size=5, padding='same')(C31)\n",
++    "    A31 = Add()([M21, C32])\n",
++    "    R31 = Activation(activation='relu')(A31)\n",
++    "    M31 = MaxPool1D(pool_size=3, strides=2)(R31)\n",
++    "\n",
++    "    C41 = Conv1D(filters=32, kernel_size=5, activation='relu', padding='same')(M31)\n",
++    "    C42 = Conv1D(filters=32, kernel_size=5, padding='same')(C41)\n",
++    "    A41 = Add()([M31, C42])\n",
++    "    R41 = Activation(activation='relu')(A41)\n",
++    "    M41 = MaxPool1D(pool_size=3, strides=2)(R41)\n",
++    "\n",
++    "\n",
++    "    F1 = Flatten()(M41)\n",
++    "    D1 = Dense(32)(F1)\n",
++    "    R1 = Activation(activation='relu')(D1)\n",
++    "    D2 = Dense(32)(R1)\n",
++    "    D3 = Dense(final_layer_size)(D2)\n",
++    "\n",
++    "    O = Activation(activation='softmax')(D3)\n",
++    "\n",
++    "    return Model(inputs=I, outputs=O)"
+    ],
+    "metadata": {
+     "collapsed": false
+@@ -1956,23 +1889,11 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 74,
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Ridge trained\n",
+-      "Xgboost trained\n",
+-      "Lasso trained\n",
+-      "Knn trained\n"
+-     ]
+-    }
+-   ],
++   "execution_count": null,
++   "outputs": [],
+    "source": [
+-    "for name, model in models.items():\n",
+-    "    model.fit(train_x, train_y)\n",
+-    "    print(f'{name} trained')"
++    "lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(0.001, decay_steps=10000, decay_rate=0.75)\n",
++    "adam = Adam(learning_rate=lr_schedule, beta_1=0.9, beta_2=0.999, amsgrad=False)"
+    ],
+    "metadata": {
+     "collapsed": false
+@@ -1980,16 +1901,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 75,
++   "execution_count": null,
+    "outputs": [],
+    "source": [
+-    "results = {}\n",
+-    "kf = KFold(n_splits= 10)\n",
+-    "\n",
+-    "for name, model in models.items():\n",
+-    "    result = np.mean(np.sqrt(-cross_val_score(model, train_x, train_y,scoring=\"neg_mean_squared_error\" ,cv= kf)))\n",
+-    "    results[name] = result\n",
+-    "results['ANN'] = RMSE_ann"
++    "n_classes = len(np.unique(train_y))\n",
++    "model_ptbdb = make_model(n_classes)\n",
++    "model_ptbdb.summary()"
+    ],
+    "metadata": {
+     "collapsed": false
+@@ -1997,23 +1914,10 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 76,
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Ridge : 0.37\n",
+-      "Xgboost : 0.4\n",
+-      "Lasso : 0.37\n",
+-      "Knn : 0.41\n",
+-      "ANN : 0.37\n"
+-     ]
+-    }
+-   ],
++   "execution_count": null,
++   "outputs": [],
+    "source": [
+-    "for name, result in results.items():\n",
+-    "    print(f\"{name} : {round(result, 2)}\")"
++    "X_train_ptbdb, X_test_ptbdb, y_train_ptbdb, y_test_ptbdb = train_test_split(X, y, test_size=0.3)"
+    ],
+    "metadata": {
+     "collapsed": false
+@@ -2021,31 +1925,36 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 77,
+-   "outputs": [
+-    {
+-     "data": {
+-      "text/plain": "          Knn   Xgboost     Ridge       ANN    Lasso\nRMSE  0.41321  0.399333  0.371373  0.371133  0.37038",
+-      "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Knn</th>\n      <th>Xgboost</th>\n      <th>Ridge</th>\n      <th>ANN</th>\n      <th>Lasso</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>RMSE</th>\n      <td>0.41321</td>\n      <td>0.399333</td>\n      <td>0.371373</td>\n      <td>0.371133</td>\n      <td>0.37038</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+-     },
+-     "execution_count": 77,
+-     "metadata": {},
+-     "output_type": "execute_result"
+-    }
+-   ],
++   "execution_count": null,
++   "outputs": [],
+    "source": [
+-    "results_df = pd.DataFrame(results, index=range(0,1)).T.rename(columns={0: 'RMSE'}).sort_values('RMSE', ascending=False)\n",
+-    "results_df.T"
++    "model_ptbdb.compile(optimizer=adam, loss=\"categorical_crossentropy\", metrics=['accuracy'])"
+    ],
+    "metadata": {
+     "collapsed": false
+    }
+   },
+   {
+-   "cell_type": "markdown",
++   "cell_type": "code",
++   "execution_count": null,
++   "outputs": [],
+    "source": [
+-    "Transfer Learning"
++    "history = model_ptbdb.fit(np.expand_dims(X_train_ptbdb, axis=2),\n",
++    "                          y_train_ptbdb,\n",
++    "                          validation_split=0.3,\n",
++    "                          epochs=20,\n",
++    "                          batch_size=256,\n",
++    "                          verbose=0)"
+    ],
++   "metadata": {
++    "collapsed": false
++   }
++  },
++  {
++   "cell_type": "code",
++   "execution_count": null,
++   "outputs": [],
++   "source": [],
+    "metadata": {
+     "collapsed": false
+    }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,8 +5,6 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="8efa5f21-3291-4eca-a953-fa8634f1cc23" name="Changes" comment="NN continued">
+-      <change beforePath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Career-Path-Predictor.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" afterDir="false" />
+     </list>
