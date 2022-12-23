@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d165a72c-911c-44dc-889d-0da0b8887bbc" name="Changes" comment="Adaboost added">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2022_13_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2022_13_47__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_12_2022_16_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_12_2022_16_22__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_12_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_12_33__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_13_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_12_2022_13_22__Changes_.xml" afterDir="false" />
+    <list default="true" id="d165a72c-911c-44dc-889d-0da0b8887bbc" name="Changes" comment="fine tuning on logistic regression and examined the scores TOGETHER">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Career-Path-Predictor.ipynb" afterDir="false" />
     </list>
@@ -181,6 +177,7 @@
     <MESSAGE value="some changes before progress report" />
     <MESSAGE value="Xgoost changed" />
     <MESSAGE value="Adaboost added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adaboost added" />
+    <MESSAGE value="fine tuning on logistic regression and examined the scores TOGETHER" />
+    <option name="LAST_COMMIT_MESSAGE" value="fine tuning on logistic regression and examined the scores TOGETHER" />
   </component>
 </project>
